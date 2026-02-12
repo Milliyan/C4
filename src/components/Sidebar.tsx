@@ -2,6 +2,10 @@ import React from 'react';
 import { CircuitNodeData } from '@/types';
 
 const COMPONENT_TYPES: { type: CircuitNodeData['type']; label: string; icon: string }[] = [
+  // 1. I MOVED JUNCTION TO THE TOP HERE
+  { type: 'junction', label: 'Junction', icon: '•' },
+  
+  // The rest follow below
   { type: 'resistor', label: 'Resistor', icon: 'R' },
   { type: 'capacitor', label: 'Capacitor', icon: 'C' },
   { type: 'inductor', label: 'Inductor', icon: 'L' },
@@ -9,7 +13,6 @@ const COMPONENT_TYPES: { type: CircuitNodeData['type']; label: string; icon: str
   { type: 'current_source', label: 'AC Current', icon: 'I' },
   { type: 'ground', label: 'Ground', icon: 'GND' },
   { type: 'op_amp', label: 'Op-Amp', icon: 'OP' },
-  { type: 'junction', label: 'Junction', icon: '•' },
 ];
 
 export const Sidebar = () => {
@@ -19,7 +22,6 @@ export const Sidebar = () => {
   };
 
   return (
-    // CHANGE IS HERE: I added "tour-sidebar" to the end of the className string
     <div className="w-64 bg-white border-r border-slate-200 shadow-sm flex flex-col h-full z-10 tour-sidebar">
       <div className="p-4 border-b border-slate-100">
         <h2 className="font-semibold text-slate-800">Toolbox</h2>
